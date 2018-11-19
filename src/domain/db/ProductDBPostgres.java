@@ -30,7 +30,7 @@ public class ProductDBPostgres implements ProductDb {
             Product product = new Product();
             while (result.next()){
                 product.setPrice(result.getDouble("price"));
-                product.setProductId(result.getInt("productId"));
+                product.setProductId(result.getInt("id"));
                 product.setName(result.getString("name"));
                 product.setDescription(result.getString("description"));
             }
@@ -47,7 +47,7 @@ public class ProductDBPostgres implements ProductDb {
             Statement statement = connection.createStatement()){
             ResultSet result = statement.executeQuery("SELECT * FROM testing.products");
             while (result.next()){
-                int productid = result.getInt("productid");
+                int productid = result.getInt("id");
                 String name = result.getString("name");
                 String descripton = result.getString("description");
                 double price = result.getDouble("price");
@@ -65,7 +65,7 @@ public class ProductDBPostgres implements ProductDb {
         if(product == null){
             throw new DbException("Nothing to add");
         }
-        String sql = "INSERT INTO testing.products VALUES(?,?,?,?);";
+        String sql = "INSERT INTO testing.products (id, name, description, price) VALUES(?,?,?,?);";
         //String sql = "INSERT INTO r0712411web.products VALUES(" + product.getProductId() + ",'" + product.getName() + "','" + product.getDescription() +"'," + product.getPrice() +")";
         try(Connection connection = DriverManager.getConnection(url, properties);
             //Statement statement = connection.createStatement()){
