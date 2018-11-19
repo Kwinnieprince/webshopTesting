@@ -1,10 +1,6 @@
 package domain.db;
 
 import domain.model.Product;
-import org.openqa.selenium.remote.ProtocolHandshake;
-
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +23,7 @@ public class ProductDBPostgres implements ProductDb {
     @Override
     public Product get(int id) {
         System.out.println(id);
-        String sql = "SELECT * from r0712411web.products where \"productId\"=" + id;
+        String sql = "SELECT * from testing.products where id=" + id;
         try(Connection connection = DriverManager.getConnection(url, properties);
             Statement statement = connection.createStatement()){
             ResultSet result = statement.executeQuery(sql);
@@ -49,7 +45,7 @@ public class ProductDBPostgres implements ProductDb {
         List<Product> producten = new ArrayList<Product>();
         try(Connection connection = DriverManager.getConnection(url,properties);
             Statement statement = connection.createStatement()){
-            ResultSet result = statement.executeQuery("SELECT * FROM r0712411web.products");
+            ResultSet result = statement.executeQuery("SELECT * FROM testing.products");
             while (result.next()){
                 int productid = result.getInt("productid");
                 String name = result.getString("name");
@@ -69,7 +65,7 @@ public class ProductDBPostgres implements ProductDb {
         if(product == null){
             throw new DbException("Nothing to add");
         }
-        String sql = "INSERT INTO r0712411web.products VALUES(?,?,?,?);";
+        String sql = "INSERT INTO testing.products VALUES(?,?,?,?);";
         //String sql = "INSERT INTO r0712411web.products VALUES(" + product.getProductId() + ",'" + product.getName() + "','" + product.getDescription() +"'," + product.getPrice() +")";
         try(Connection connection = DriverManager.getConnection(url, properties);
             //Statement statement = connection.createStatement()){
@@ -91,7 +87,7 @@ public class ProductDBPostgres implements ProductDb {
         }
         int productid = product.getProductId();
         //String sql = "UPDATE r0712411.products SET name= '" + product.getName() + ", description = \"" +product.getDescription() +"\", price= " + product.getPrice() + " WHERE productid=" + productid;
-        String sql = "UPDATE r0712411.products SET name= ?, description = ?, price= ? WHERE productid=?;";
+        String sql = "UPDATE testing.products SET name= ?, description = ?, price= ? WHERE id=?;";
         try(Connection connection = DriverManager.getConnection(url, properties);
             //Statement statement = connection.createStatement()) {
             PreparedStatement statement = connection.prepareStatement(sql)){
@@ -107,7 +103,7 @@ public class ProductDBPostgres implements ProductDb {
 
     @Override
     public void delete(int id) {
-        String sql = "DELETE FROM r0712411.products WHERE productid= ?;";
+        String sql = "DELETE FROM testing.products WHERE id= ?;";
         try(Connection connection = DriverManager.getConnection(url, properties);
             //Statement statement = connection.createStatement()) {
             PreparedStatement statement = connection.prepareStatement(sql)){

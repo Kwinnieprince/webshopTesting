@@ -1,9 +1,6 @@
 package domain.db;
 
 import domain.model.Product;
-
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Properties;
 
