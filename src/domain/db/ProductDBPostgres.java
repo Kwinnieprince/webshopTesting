@@ -95,7 +95,7 @@ public class ProductDBPostgres implements ProductDb {
             statement.setString(2, product.getDescription());
             statement.setDouble(3, product.getPrice());
             statement.setInt(4, product.getProductId());
-            statement.execute(sql);
+            statement.execute();
         }catch (SQLException e){
             throw new DbException(e);
         }

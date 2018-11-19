@@ -33,7 +33,7 @@
             </div>
         </c:forEach>
     </c:if>
-    <form method="post" action="Controller?action=update" novalidate="novalidate">
+    <form method="post" action="Controller?action=Update" novalidate="novalidate">
         <!-- novalidate in order to be able to run tests correctly -->
         <p><label for="name">Name</label><input type="text" id="name" name="name" required value="${product.name}"> </p>
         <p><label for="description">Description</label><input type="text" id="description" name="description" required value="${product.description}"> </p>
