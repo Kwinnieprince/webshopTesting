@@ -1,6 +1,5 @@
 package domain.db;
 
-import domain.model.Person;
 import domain.model.Product;
 
 import java.io.UnsupportedEncodingException;
@@ -41,5 +40,5 @@ public class ShopService {
     public int getNumberOfProducts(){
         return productDb.getNumbeOfProducts();
     }
-    
+
 }

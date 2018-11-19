@@ -16,8 +16,6 @@
         <nav>
             <ul>
                 <li><a href="Controller">Home</a></li>
-                <li><a href="Controller?action=Overview">Overview</a></li>
-                <li><a href="Controller?action=SignUp">Sign up</a></li>
                 <li><a href="Controller?action=Products">products</a></li>
                 <li id="actual"><a href="Controller?action=AddProduct">add product</a></li>
             </ul>
