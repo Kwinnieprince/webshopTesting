@@ -10,31 +10,13 @@ import java.util.Properties;
 
 public class ShopService {
     private Properties properties;
-    PersonDb personDb;
     ProductDb productDb;
 
     public ShopService(Properties properties){
         this.properties = properties;
-        personDb = new PersonDBPostgres(properties);
         productDb = new ProductDBPostgres(properties);
     }
 
-
-    public List<Person> getPersons(){
-        return personDb.getAll();
-    }
-
-    public Person getPerson(String id){
-        return personDb.get(id);
-    }
-
-    public void deletePerson(String id){
-        personDb.delete(id);
-    }
-
-    public int getNumberOfPersons(){
-        return personDb.getNumberOfPersons();
-    }
 
     public Product getProduct(int id){
         return productDb.get(id);
@@ -59,19 +41,5 @@ public class ShopService {
     public int getNumberOfProducts(){
         return productDb.getNumbeOfProducts();
     }
-
-    public void addPerson(Person person) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        personDb.add(person);
-    }
-
-    public void updatePerson(Person person) throws NoSuchAlgorithmException, UnsupportedEncodingException{
-        personDb.update(person);
-    }
-
-    public boolean check(String id, String password) throws UnsupportedEncodingException, NoSuchAlgorithmException{
-        return personDb.check(id, password);
-    }
-
-
-
+    
 }
