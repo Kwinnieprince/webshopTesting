@@ -32,24 +32,9 @@
 			dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
 			aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
 			qui ratione voluptatem sequi nesciunt.</p>
-			<br>
-			<p>Do you want to see a quote?</p>
-			<form method="post" action="Controller?action=Quote" novalidate="novalidate">
-				<p>
-					<label for="yes"><input type="radio" name="quote" value="yes" id="yes">Yes</label>
-					<label for="no"><input type="radio" name="quote" value="no" id="no">No</label>
-					<br>
-					<input type="submit" id="quote" value="Send">
-				</p>
-			</form>
-			<br>
-			<p>
-				<c:if test="${cookiecheck == 'yes'}">
-					Even a dead fish can go with the flow
-				</c:if>
-			</p>
+
 		</main>
-		<footer> &copy; Webontwikkeling 3, UC Leuven-Limburg </footer>
+		<footer> &copy; group22 </footer>
 	</div>
 </body>
 </html>

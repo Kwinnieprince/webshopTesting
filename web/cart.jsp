@@ -46,6 +46,11 @@
                 <p><c:out value="Total price : ${ total }€"/></p>
             </c:if>
         </table>
+        <c:if test="${empty emp}">
+            <form method="post" action="userinfo.jsp">
+                <input type="submit" value="checkout" />
+            </form>
+        </c:if>
     </main>
     <footer>
         &copy; groep22

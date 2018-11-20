@@ -34,13 +34,12 @@
             </div>
         </c:forEach>
     </c:if>
-    <form method="post" action="Controller?action=Update" novalidate="novalidate">
+    <form method="post" action="Controller?action=Checkout" novalidate="novalidate">
         <!-- novalidate in order to be able to run tests correctly -->
         <p><label for="username">Name</label><input type="text" id="username" name="username" required placeholder="What is your name?"> </p>
-        <p><label for="adress">Description</label><input type="text" id="adress" name="adress" required> </p>
-        <p><label for="price">price</label><input type="text" id="price" name="price" required value="${product.price}"></p>
-        <p><label for="id">id</label><input type="text" id="id" name="id" required value="${product.productId}" readonly></p>
-        <p><input type="submit" id="update" value="update product"></p>
+        <p><label for="adress">Adress</label><input type="text" id="adress" name="adress" required placeholder="What is the adress?"> </p>
+        <p><label for="postalcode">postal code</label><input type="number" id="postalcode" name="postalcode" required placeholder="what is your postal code"></p>
+        <p><input type="submit" id="update" value="submit"></p>
 
     </form>
 </main>

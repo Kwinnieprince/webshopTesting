@@ -45,7 +45,7 @@
     </form>
 </main>
     <footer>
-        &copy; Webontwikkeling 3, UC Leuven-Limburg
+        &copy; group22
     </footer>
 </div>
 </body>
