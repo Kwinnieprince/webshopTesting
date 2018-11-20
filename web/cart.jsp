@@ -30,22 +30,20 @@
                 <th>Description</th>
                 <th>price</th>
             </tr>
-            <tr>
-                <td>plant</td>
-                <td>groene plant</td>
-                <td>5.6</td>
-            </tr>
             <c:if test="${not empty emp}">
                 <p><c:out value="${emp}"/></p>
             </c:if>
             <c:if test="${not empty productscart}">
+                <c:set var="total" scope="session" value="${ 0 }"/>
                 <c:forEach var ="products" items = "${productscart}" >
+                    <c:set var="total" scope="session" value=" ${ total + products.price }" />
                     <tr>
                         <td><c:out value="${products.name}"/></td>
                         <td><c:out value="${products.description}"/></td>
                         <td><c:out value="${products.price}"/></td>
                     </tr>
                 </c:forEach>
+                <p><c:out value="Total price : ${ total }€"/></p>
             </c:if>
         </table>
     </main>
