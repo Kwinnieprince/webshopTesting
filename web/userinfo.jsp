@@ -6,7 +6,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8">
-    <title>Sign Up</title>
+    <title>update</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
             <ul>
                 <li><a href="Controller">Home</a></li>
                 <li><a href="Controller?action=Products">products</a></li>
-                <li id="actual"><a href="Controller?action=AddProduct">add product</a></li>
+                <li><a href="Controller?action=AddProduct">add product</a></li>
                 <li><a href="Controller?action=Cart">show cart</a></li>
             </ul>
         </nav>
@@ -34,18 +34,18 @@
             </div>
         </c:forEach>
     </c:if>
-    <form method="post" action="Controller?action=Add" novalidate="novalidate">
+    <form method="post" action="Controller?action=Update" novalidate="novalidate">
         <!-- novalidate in order to be able to run tests correctly -->
-        <p><label for="name">Name</label><input type="text" id="name" name="name" required value=""> </p>
-        <p><label for="description">Description</label><input type="text" id="description" name="description" required value=""> </p>
-        <p><label for="price">price</label><input type="text" id="price" name="price" required value=""></p>
-        <p><label for="id">id</label><input type="text" id="id" name="id" required value=""></p>
-        <p><input type="submit" id=Add" value="add product"></p>
+        <p><label for="username">Name</label><input type="text" id="username" name="username" required placeholder="What is your name?"> </p>
+        <p><label for="adress">Description</label><input type="text" id="adress" name="adress" required> </p>
+        <p><label for="price">price</label><input type="text" id="price" name="price" required value="${product.price}"></p>
+        <p><label for="id">id</label><input type="text" id="id" name="id" required value="${product.productId}" readonly></p>
+        <p><input type="submit" id="update" value="update product"></p>
 
     </form>
 </main>
     <footer>
-        &copy; Webontwikkeling 3, UC Leuven-Limburg
+        &copy; group22
     </footer>
 </div>
 </body>

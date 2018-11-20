@@ -16,6 +16,7 @@
                 <li><a href="Controller">Home</a></li>
                 <li id="actual"><a href="Controller?action=Products">products</a></li>
                 <li><a href="Controller?action=AddProduct">add product</a></li>
+                <li><a href="Controller?action=Cart">show cart</a></li>
             </ul>
         </nav>
         <h2>
@@ -40,7 +41,7 @@
             <td><c:out value="${products.description}"/></td>
             <td><c:out value="${products.price}"/></td>
             <td><a href="Controller?action=Delete&id=${products.productId}">delete</a></td>
-            <td><a href="Controller?action=AddToCart">add to cart</a></td>
+            <td><a href="Controller?action=AddToCart&id=${products.productId}">add to cart</a></td>
         </tr>
         </c:forEach>
         <caption>Users Overview</caption>

@@ -18,6 +18,7 @@
                 <li><a href="Controller">Home</a></li>
                 <li><a href="Controller?action=Products">products</a></li>
                 <li><a href="Controller?action=AddProduct">add product</a></li>
+                <li><a href="Controller?action=Cart">show cart</a></li>
             </ul>
         </nav>
         <h2>
