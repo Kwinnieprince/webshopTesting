@@ -23,7 +23,7 @@
             </ul>
         </nav>
         <h2>
-            add product
+            User info
         </h2>
     </header><main>
     <c:if test="${not empty errors}">

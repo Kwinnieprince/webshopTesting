@@ -21,7 +21,7 @@
             </ul>
         </nav>
         <h2>
-            Sign Up
+            Overview
         </h2>
     </header>
 <main>
@@ -30,11 +30,6 @@
             <th>Name</th>
             <th>Description</th>
             <th>price</th>
-        </tr>
-        <tr>
-            <td>plaant</td>
-            <td>groene plant</td>
-            <td>5.6</td>
         </tr>
         <c:forEach var ="products" items = "${products}" >
         <tr>

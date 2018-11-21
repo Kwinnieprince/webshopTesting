@@ -21,11 +21,11 @@
             </ul>
         </nav>
         <h2>
-            overview
+            Order Overview
         </h2>
     </header>
     <main>
-        <h2>this is your order:</h2>
+        <h2>This is your order:</h2>
         <table>
             <tr>
                 <th>Name</th>
