@@ -12,6 +12,7 @@ public class DeleteConfirmation extends RequestHandler {
         String id = request.getParameter("id");
         if(delete.toUpperCase().equals("JA")){
             getService().deleteProduct(Integer.parseInt(id));
+            request.setAttribute("products", getService().getAll());
             return "products.jsp";
         }else{
             return "index.jsp";

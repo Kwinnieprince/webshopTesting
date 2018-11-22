@@ -103,12 +103,12 @@ public class ProductDBPostgres implements ProductDb {
 
     @Override
     public void delete(int id) {
-        String sql = "DELETE FROM testing.products WHERE id= ?;";
+        String sql = "DELETE FROM testing.products WHERE id = ?;";
         try(Connection connection = DriverManager.getConnection(url, properties);
             //Statement statement = connection.createStatement()) {
             PreparedStatement statement = connection.prepareStatement(sql)){
             statement.setInt(1, id);
-            statement.execute(sql);
+            statement.execute();
         }catch (SQLException e){
             throw new DbException(e);
         }
