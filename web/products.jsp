@@ -33,11 +33,17 @@
         </tr>
         <c:forEach var ="products" items = "${products}" >
         <tr>
-            <td><a href="Controller?action=Change&product=${products.productId}"><c:out value="${products.name}"/></a></td>
-            <td><c:out value="${products.description}"/></td>
-            <td><c:out value="${products.price}"/></td>
-            <td><a href="Controller?action=Delete&id=${products.productId}">delete</a></td>
-            <td><a href="Controller?action=AddToCart&id=${products.productId}">add to cart</a></td>
+            <form method="post" action="Controller?action=AddToCart&id=${products.productId}">
+                <td><a href="Controller?action=Change&product=${products.productId}"><c:out value="${products.name}"/></a></td>
+                <td><c:out value="${products.description}"/></td>
+                <td><c:out value="${products.price}"/></td>
+                <td><a href="Controller?action=Delete&id=${products.productId}">delete</a></td>
+                <td>
+                    <label for="nrofproducts"><input type="number" name="nrofproducts" id="nrofproducts" value="1"></label>
+                    <input type="submit" name="addToCart" id="addToCart" value="add to cart">
+                </td>
+                </form>
+                <!--<a href="Controller?action=AddToCart&id=${products.productId}">add to cart</a>-->
         </tr>
         </c:forEach>
         <caption>Users Overview</caption>

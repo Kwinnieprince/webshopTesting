@@ -21,7 +21,13 @@ public class AddToCart extends RequestHandler {
         String sessionId = session.getId();
         int productid = Integer.parseInt(request.getParameter("id"));
         Product product = getService().getProduct(productid);
-        products.add(product);
+        int nrofproducts = Integer.parseInt(request.getParameter("nrofproducts"));
+        if(nrofproducts <= 0){
+            return "Controller?action=Products";
+        }
+        for(int i = 0; i < nrofproducts; i++){
+            products.add(product);
+        }
         session.setAttribute("productscart", products);
         request.setAttribute("products", getService().getAll());
         return "products.jsp";
