@@ -48,9 +48,14 @@
             </c:if>
         </table>
         <c:if test="${empty emp}">
+            <div style="display: inline">
             <form method="post" action="userinfo.jsp">
                 <input type="submit" value="checkout" />
             </form>
+            <form method="post" action="Controller?action=ClearCart">
+                <input type="submit" value="clear cart">
+            </form>
+            </div>
         </c:if>
     </main>
     <footer>
