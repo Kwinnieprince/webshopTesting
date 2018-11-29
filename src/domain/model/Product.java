@@ -69,13 +69,17 @@ public class Product {
 
 	@Override
 	public boolean equals(Object o) {
-		if(o != null && o instanceof Product) {
+		if(o == null) return false;
+		if(o == this) return true;
+		if(o instanceof Product) {
 			Product p = (Product) o;
-			if(p.productId == this.productId) {
-				return true;
-			}
+			if(p.productId == this.productId) return true;
 		}
 		return false;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return this.productId;
+	}
 }
