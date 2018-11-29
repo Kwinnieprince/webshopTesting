@@ -66,5 +66,16 @@ public class Product {
 	public String toString(){
 		return getName() + ": " + getDescription() + " - " + getPrice();
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if(o != null && o instanceof Product) {
+			Product p = (Product) o;
+			if(p.productId == this.productId) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }
