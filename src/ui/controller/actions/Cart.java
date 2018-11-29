@@ -18,7 +18,9 @@ public class Cart extends RequestHandler {
         } else {
             ArrayList<Product> products = (ArrayList<Product>) session.getAttribute("productscart");
             HashMap<Product, Integer> ret = new HashMap<>();
+            int total = 0;
             for(Product p : products) {
+                total += p.getPrice();
                 if(!ret.containsKey(p) || ret.get(p) == 0) {
                     ret.put(p, 1);
                 }
@@ -26,6 +28,7 @@ public class Cart extends RequestHandler {
                     ret.put(p, ret.get(p) + 1);
                 }
             }
+            request.setAttribute("total", total);
             request.setAttribute("productscart", ret);
         }
         return "cart.jsp";

@@ -36,9 +36,7 @@
                 <p><c:out value="${emp}"/></p>
             </c:if>
             <c:if test="${not empty productscart}">
-                <c:set var="total" scope="session" value="${ 0 }"/>
                 <c:forEach var ="products" items = "${productscart}" >
-                    <c:set var="total" scope="session" value=" ${ total + products.key.price }" />
                     <tr>
                         <td><c:out value="${products.key.name}"/></td>
                         <td><c:out value="${products.key.description}"/></td>
