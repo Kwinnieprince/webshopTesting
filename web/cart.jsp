@@ -50,7 +50,7 @@
             </c:if>
         </table>
         <c:if test="${empty emp}">
-            <div style="display: inline">
+            <div>
             <form method="post" action="userinfo.jsp">
                 <input type="submit" value="checkout" />
             </form>
