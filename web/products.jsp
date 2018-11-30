@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8">
-    <title>Sign Up</title>
+    <title>Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -16,6 +16,7 @@
             <ul>
                 <li><a href="Controller">Home</a></li>
                 <li id="actual"><a href="Controller?action=Products">products</a></li>
+                <li><a href="Controller?action=Overview">orders</a></li>
                 <li><a href="Controller?action=AddProduct">add product</a></li>
                 <li><a href="Controller?action=Cart">show cart</a></li>
             </ul>
