@@ -38,9 +38,9 @@
     </c:if>
     <form method="post" action="Controller?action=Checkout" novalidate="novalidate">
         <!-- novalidate in order to be able to run tests correctly -->
-        <p><label for="username">Name</label><input type="text" id="username" name="username" required placeholder="What is your name?"> </p>
-        <p><label for="adress">Adress</label><input type="text" id="adress" name="adress" required placeholder="What is the adress?"> </p>
-        <p><label for="postalcode">postal code</label><input type="number" id="postalcode" name="postalcode" required placeholder="what is your postal code"></p>
+        <p <c:if test="${nameerror == true}"> class="alert-danger" </c:if>><label for="username">Name</label><input type="text" id="username" name="username" required placeholder="What is your name?" <c:if test="${postalerror == true}">value="${username}"</c:if>"> </p>
+        <p <c:if test="${adresserror == true}"> class="alert-danger" </c:if>><label for="adress">Adress</label><input type="text" id="adress" name="adress" required placeholder="What is the adress?" <c:if test="${postalerror == true}">value="${adress}"</c:if>> </p>
+        <p <c:if test="${postalerror == true}"> class="alert-danger" </c:if>><label for="postalcode">postal code</label><input type="number" id="postalcode" name="postalcode" required placeholder="postal code"> <c:if test="${postalerror == true}"> The postal code is wrong.</c:if></p>
         <p><input type="submit" id="update" value="submit"></p>
 
     </form>
