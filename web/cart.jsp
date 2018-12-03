@@ -32,6 +32,7 @@
                 <th>Description</th>
                 <th>Price</th>
                 <th>Amount</th>
+                <th>Total</th>
             </tr>
             <c:if test="${not empty emp}">
                 <p><c:out value="${emp}"/></p>
@@ -43,6 +44,7 @@
                         <td><c:out value="${products.key.description}"/></td>
                         <td><c:out value="${products.key.price}"/></td>
                         <td><c:out value="${products.value}" /> </td>
+                        <td><c:out value="${products.key.price * products.value}"/></td>
                     </tr>
                 </c:forEach>
                 <p><c:out value="Total price : ${ total }€"/></p>

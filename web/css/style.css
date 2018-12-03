@@ -2,6 +2,7 @@
 
 #container {
 	margin: 0 auto;
+	width: 100%;
 }
 nav ul {
 	list-style: none;
@@ -82,7 +83,7 @@ input,textarea {
 
 /* mobile first */
 div#container {
-	width: 95%;
+	width: 100%;
 }
 
 nav ul li {
