@@ -35,10 +35,8 @@ public class Update extends RequestHandler {
         String id = request.getParameter("id");
         try{
             product.setProductId(Integer.parseInt(id));
-        }catch (DomainException e){
-            errors.add(e.getMessage());
         }catch (Exception e){
-            errors.add(e.getMessage());
+            errors.add("An unexpected error occurred");
         }
     }
 
