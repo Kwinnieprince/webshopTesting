@@ -1,5 +1,6 @@
 package domain.db;
 
+import domain.model.Person;
 import domain.model.Product;
 import java.util.List;
 import java.util.Properties;
@@ -7,10 +8,12 @@ import java.util.Properties;
 public class ShopService {
     private Properties properties;
     ProductDb productDb;
+    PersonDb personDb;
 
     public ShopService(Properties properties){
         this.properties = properties;
         productDb = new ProductDBPostgres(properties);
+        personDb = new PersonDbPostgres(properties);
     }
 
 
@@ -37,5 +40,30 @@ public class ShopService {
     public int getNumberOfProducts(){
         return productDb.getNumbeOfProducts();
     }
+
+    public Person getPerson(int id){
+        return personDb.get(id);
+    }
+
+    public List<Person>getAllPersons(){
+        return personDb.getAll();
+    }
+
+    public void updatePerson(Person person){
+        personDb.update(person);
+    }
+
+    public void addPerson(Person person){
+        personDb.add(person);
+    }
+
+    public void deletePerson(int id) {
+        personDb.delete(id);
+    }
+
+    public int getNumberOfPersons(){
+        return personDb.getNumberOfPersons();
+    }
+
 
 }
