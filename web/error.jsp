@@ -29,7 +29,6 @@
     <main>
         <h3>Oops something went wrong!</h3>
         <p><a href="index.jsp">go back to home</a></p>
-        <p>${pageContext.exception.message}</p>
         <p>Something unexpected happened please try again and if the problem persists please contact us at <a href="mailto:noreply@ucll.be">support@ucll.be</a></p>
     </main>
 </div>
