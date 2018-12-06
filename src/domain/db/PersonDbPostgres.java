@@ -1,8 +1,6 @@
 package domain.db;
 
 import domain.model.Person;
-import domain.model.Person;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,9 +48,9 @@ public class PersonDbPostgres implements PersonDb {
             while (result.next()){
                 int personid = result.getInt("id");
                 String name = result.getString("name");
-                String descripton = result.getString("description");
-                double price = result.getDouble("price");
-                Person person = new Person(personid, name, descripton, price);
+                String adres = result.getString("adres");
+                String postcalCode = result.getString("postcal_code");
+                Person person = new Person(personid, name, adres, postcalCode);
                 personen.add(person);
             }
         }catch (SQLException e){

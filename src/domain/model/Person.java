@@ -15,6 +15,8 @@ public class Person {
         setPostalCode(postalCode);
     }
 
+    public Person(){}
+
     public void setId(int id){
         if(id <= 0 ) throw new DomainException("Id can't be lower then 1");
         this.id = id;
