@@ -1,5 +1,8 @@
 @CHARSET "UTF-8";
 
+body {
+	margin:0;
+}
 #container {
 	margin: 0 auto;
 	width: 100%;
@@ -27,8 +30,8 @@ h2, main, footer {
 }
 
 h1 {
-	background-image: url("../images/bannerKlein.png");
-	height: 100px;
+	background-image: url("../images/banner2.jpg");
+	height: 300px;
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -112,7 +115,10 @@ input {
 		max-width: 1000px;
 	}
 	h1 {
-		background-image: url("../images/banner.png");
+		background-image: url("../images/banner2.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 300px;
 	}
 
 	nav ul {
