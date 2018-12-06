@@ -24,7 +24,7 @@
             </ul>
         </nav>
         <h2>
-            add product
+            Update Product
         </h2>
     </header><main>
     <c:if test="${not empty errors}">
