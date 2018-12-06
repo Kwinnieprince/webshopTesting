@@ -26,6 +26,9 @@
         </h2>
     </header>
 <main>
+    <c:if test="${much != null}">
+        <p class="alert-danger"><c:out value="${much}"/></p>
+    </c:if>
     <table>
         <tr>
             <th>Name</th>
