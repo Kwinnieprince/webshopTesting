@@ -43,7 +43,7 @@
                 <td><c:out value=" € ${products.price}"/></td>
                 <td><a href="Controller?action=Delete&id=${products.productId}">delete</a></td>
                 <td>
-                    <label for="nrofproducts"><input type="number" name="nrofproducts" id="nrofproducts" value="1"></label>
+                    <label for="nrofproducts"><input type="number" name="nrofproducts" id="nrofproducts" value="1" min="1" max="100"></label>
                     <input type="submit" name="addToCart" id="addToCart" value="add to cart">
                 </td>
                 </form>

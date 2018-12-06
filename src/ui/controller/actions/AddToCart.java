@@ -26,11 +26,11 @@ public class AddToCart extends RequestHandler {
             product = getService().getProduct(productid);
             nrofproducts = Integer.parseInt(request.getParameter("nrofproducts"));
         }catch (Exception e){
-            request.setAttribute("much", "you exceeded the maximum amount if 100 products that you can buy");
+            request.setAttribute("much", "you exceeded the maximum amount of 100 products that you can buy");
             return "Controller?action=Products";
         }
         if (nrofproducts > 100){
-            request.setAttribute("much", "you exceeded the maximum amount if 100 products that you can buy");
+            request.setAttribute("much", "you exceeded the maximum amount of 100 products that you can buy");
             return "Controller?action=Products";
         }
         if(nrofproducts <= 0){
