@@ -37,7 +37,7 @@
             <form method="post" action="Controller?action=AddToCart&id=${products.productId}">
                 <td><c:out value="${products.name}" /></td>
                 <td><c:out value="${products.description}"/></td>
-                <td><c:out value="${products.price}"/></td>
+                <td><c:out value=" € ${products.price}"/></td>
                 <td><a href="Controller?action=Delete&id=${products.productId}">delete</a></td>
                 <td>
                     <label for="nrofproducts"><input type="number" name="nrofproducts" id="nrofproducts" value="1"></label>
