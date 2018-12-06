@@ -22,7 +22,6 @@ public class PersonDbPostgres implements PersonDb {
 
     @Override
     public Person get(int id) {
-        System.out.println(id);
         String sql = "SELECT * from testing.persons where id=" + id;
         try(Connection connection = DriverManager.getConnection(url, properties);
             Statement statement = connection.createStatement()){
