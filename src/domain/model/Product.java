@@ -50,8 +50,10 @@ public class Product {
 		return price;
 	}
 	public void setPrice(double price) {
-		if (price<0) {
+		if (price<0.01) {
 			throw new DomainException("Give a valid price");
+		}else if (price >= Double.MAX_VALUE){
+			throw new DomainException("But why?");
 		}
 		this.price = price;
 	}
