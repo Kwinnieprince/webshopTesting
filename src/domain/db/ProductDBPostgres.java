@@ -65,15 +65,15 @@ public class ProductDBPostgres implements ProductDb {
         if(product == null){
             throw new DbException("Nothing to add");
         }
-        String sql = "INSERT INTO testing.products (id, name, description, price) VALUES(?,?,?,?);";
+        String sql = "INSERT INTO testing.products (name, description, price) VALUES(?,?,?);";
         //String sql = "INSERT INTO r0712411web.products VALUES(" + product.getProductId() + ",'" + product.getName() + "','" + product.getDescription() +"'," + product.getPrice() +")";
         try(Connection connection = DriverManager.getConnection(url, properties);
             //Statement statement = connection.createStatement()){
             PreparedStatement statement = connection.prepareStatement(sql)){
-            statement.setInt(1, product.getProductId());
-            statement.setString(2, product.getName());
-            statement.setString(3, product.getDescription());
-            statement.setDouble(4, product.getPrice());
+//            statement.setInt(1, product.getProductId());
+            statement.setString(1, product.getName());
+            statement.setString(2, product.getDescription());
+            statement.setDouble(3, product.getPrice());
             statement.execute();
         }catch (SQLException e){
             throw new DbException(e);

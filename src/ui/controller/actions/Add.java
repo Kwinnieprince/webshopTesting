@@ -17,7 +17,7 @@ public class Add extends RequestHandler {
             maakName(request, product, errors);
             maakDescription(request, product, errors);
             maakprice(request, product, errors);
-            maakId(request, product, errors);
+            //maakId(request, product, errors);
         }catch (Exception e){
             errors.add(e.getMessage());
         }

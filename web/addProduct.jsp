@@ -41,7 +41,6 @@
         <p><label for="name">Name</label><input type="text" id="name" name="name" required value=""> </p>
         <p><label for="description">Description</label><input type="text" id="description" name="description" required value=""> </p>
         <p><label for="price">price</label><input type="text" id="price" name="price" required value=""></p>
-        <p><label for="id">id</label><input type="text" id="id" name="id" required value=""></p>
         <p><input type="submit" id=Add" value="add product"></p>
 
     </form>
