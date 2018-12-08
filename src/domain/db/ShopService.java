@@ -1,5 +1,6 @@
 package domain.db;
 
+import domain.model.Order;
 import domain.model.Person;
 import domain.model.Product;
 import java.util.List;
@@ -64,6 +65,7 @@ public class ShopService {
     public int getNumberOfPersons(){
         return personDb.getNumberOfPersons();
     }
+
 
 
 }
