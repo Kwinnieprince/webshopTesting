@@ -44,7 +44,7 @@
                 <td><a href="Controller?action=Delete&id=${products.productId}">delete</a></td>
                 <td>
                     <label for="nrofproducts"><input type="number" name="nrofproducts" id="nrofproducts" value="1" min="1" max="100"></label>
-                    <input type="submit" name="addToCart" id="addToCart" value="add to cart">
+                    <input type="submit" name="addToCart" id="addToCart" value="add to cart" style="margin-left: 50px">
                 </td>
                 </form>
                 <!--<a href="Controller?action=AddToCart&id=${products.productId}">add to cart</a>-->
