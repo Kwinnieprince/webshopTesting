@@ -51,12 +51,12 @@
                                     <tr>
                                         <td><c:out value="${product.name}" /> </td>
                                         <td><c:out value="${product.description}" /> </td>
-                                        <td><c:out value="${product.price}" /> </td>
+                                        <td>&euro; <c:out value="${product.price}" /> </td>
                                     </tr>
                                 </c:forEach>
                         </table>
                     </td>
-                    <td><c:out value="${orders.key.total}"/> </td>
+                    <td>&euro; <c:out value="${orders.key.total}"/> </td>
                 </tr>
             </c:forEach>
         </table>
