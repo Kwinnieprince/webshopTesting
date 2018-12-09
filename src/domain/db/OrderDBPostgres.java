@@ -118,7 +118,7 @@ public class OrderDBPostgres implements OrderDb {
             PreparedStatement statement = connection.prepareStatement(sql)){
 //            statement.setInt(1, product.getProductId());
             //System.out.println(order.getOrderId() +"\n"+ order.getPersonId() +"\n"+ order.getProductId());
-            for(int i = 0; i <= sizeOrders; i++){
+            for(int i = 0; i < sizeOrders; i++){
                 statement.setInt(1, order.getOrderId());
                 statement.setInt(2, order.getPersonId());
                 statement.setInt(3, order.getProductId().get(i));
