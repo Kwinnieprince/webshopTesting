@@ -42,6 +42,21 @@
                     <td><c:out value="${orders.key.postalcode}"/></td>
                     <td><c:out value="${orders.key.products}"/></td>
                     <td>&euro; <c:out value="${orders.key.total}"/></td>
+                    <td>
+                        <table>
+                            <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <c:forEach var="product" items="${orders.key.products}" >
+                            <td><c:out value="${product.name}" /> </td>
+                            <td><c:out value="${product.description}" /> </td>
+                            <td><c:out value="${product.price}" /> </td>
+                        </c:forEach>
+                            </tr>
+                        </table>
+                    </td>
+                    <td><c:out value="${orders.key.total}"/> </td>
                 </tr>
             </c:forEach>
         </table>
