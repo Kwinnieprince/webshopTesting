@@ -15,4 +15,6 @@ public interface PersonDb {
     void delete(int id);
 
     int getNumberOfPersons();
+
+    int generateId();
 }

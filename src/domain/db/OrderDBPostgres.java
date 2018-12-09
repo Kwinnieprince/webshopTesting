@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 
 public class OrderDBPostgres implements OrderDb {
     private Properties properties;
@@ -115,6 +116,7 @@ public class OrderDBPostgres implements OrderDb {
             //Statement statement = connection.createStatement()){
             PreparedStatement statement = connection.prepareStatement(sql)){
 //            statement.setInt(1, product.getProductId());
+            //System.out.println(order.getOrderId() +"\n"+ order.getPersonId() +"\n"+ order.getProductId());
             statement.setInt(1, order.getOrderId());
             statement.setInt(2, order.getPersonId());
             statement.setInt(3, order.getProductId());
@@ -122,6 +124,25 @@ public class OrderDBPostgres implements OrderDb {
         }catch (SQLException e){
             throw new DbException(e);
         }
+    }
+
+    public int generateId(){
+        int random = new Random().nextInt(Integer.MAX_VALUE - 1);
+        try(Connection connection = DriverManager.getConnection(url,properties);
+            Statement statement = connection.createStatement()){
+            ResultSet result = statement.executeQuery("SELECT * FROM testing.orders");
+            while (result.next()){
+                int id = result.getInt("id");
+                if(id != random){
+                    break;
+                }else {
+                    generateId();
+                }
+            }
+        }catch (SQLException e){
+            throw new DbException(e);
+        }
+        return random;
     }
 
     @Override

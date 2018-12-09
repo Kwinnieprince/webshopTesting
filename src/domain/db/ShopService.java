@@ -71,4 +71,15 @@ public class ShopService {
         return orderDb.getAll();
     }
 
+    public int generatePersonId(){
+        return personDb.generateId();
+    }
+
+    public void addOrder(Order order){
+        orderDb.add(order);
+    }
+
+    public int generateOrderId(){
+        return productDb.generateId();
+    }
 }

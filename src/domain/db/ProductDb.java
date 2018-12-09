@@ -18,4 +18,6 @@ public interface ProductDb {
     void delete(int id);
 
     int getNumbeOfProducts();
+
+    int generateId();
 }

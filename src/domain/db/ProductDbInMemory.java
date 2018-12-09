@@ -64,4 +64,9 @@ public class ProductDbInMemory implements ProductDb {
 	public int getNumbeOfProducts() {
 		return records.size();
 	}
+
+	@Override
+	public int generateId() {
+		return 0;
+	}
 }

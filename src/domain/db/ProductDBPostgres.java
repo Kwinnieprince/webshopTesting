@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 
 public class ProductDBPostgres implements ProductDb {
     private Properties properties;
@@ -117,5 +118,24 @@ public class ProductDBPostgres implements ProductDb {
     @Override
     public int getNumbeOfProducts() {
         return getAll().size();
+    }
+
+    public int generateId(){
+        int random = new Random().nextInt(Integer.MAX_VALUE - 1);
+        try(Connection connection = DriverManager.getConnection(url,properties);
+            Statement statement = connection.createStatement()){
+            ResultSet result = statement.executeQuery("SELECT * FROM testing.products");
+            while (result.next()){
+                int id = result.getInt("id");
+                if(id != random){
+                    break;
+                }else {
+                    generateId();
+                }
+            }
+        }catch (SQLException e){
+            throw new DbException(e);
+        }
+        return random;
     }
 }

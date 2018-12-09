@@ -34,4 +34,9 @@ public class PersonDbInMemory implements PersonDb {
     public int getNumberOfPersons() {
         return 0;
     }
+
+    @Override
+    public int generateId() {
+        return 0;
+    }
 }

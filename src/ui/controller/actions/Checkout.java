@@ -1,5 +1,7 @@
 package ui.controller.actions;
 
+import domain.model.Order;
+import domain.model.Person;
 import domain.model.Product;
 import ui.controller.RequestHandler;
 
@@ -42,6 +44,12 @@ public class Checkout extends RequestHandler {
             for (Product product : products){
                 price += product.getPrice();
             }
+            Person person = new Person(getService().generatePersonId(),name, adress, postalcode);
+            Order order = new Order(person, products);
+            order.setPersonId(person.getId());
+            order.setOrderId(getService().generateOrderId());
+            System.out.println(order.getPersonId() +"\n"+ order.getProductId() +"\n"+ order.getOrderId());
+            getService().addOrder(order);
             request.setAttribute("name", name);
             request.setAttribute("adress", adress);
             request.setAttribute("postalcode", postalcode);
