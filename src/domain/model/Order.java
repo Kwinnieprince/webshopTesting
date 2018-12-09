@@ -1,5 +1,6 @@
 package domain.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
@@ -15,23 +16,31 @@ public class Order {
     }
 
     public Order(){
-        this(null, null);
+        this(null, new ArrayList<>());
     }
 
     public void setPerson(Person person){
-        if(person != null){
-            this.person = person;
-        }
+        this.person = person;
     }
 
     public void setProducts(List<Product> products){
-        if(products != null || products.size() != 0 ){
-            this.products = products;
-        }
+        this.products = products;
     }
 
-    public Person getPerson(){
-        return this.person;
+    public void addProduct(Product product){
+        products.add(product);
+    }
+
+    public String getPerson(){
+        return this.person.getName();
+    }
+
+    public String getAdress(){
+        return person.getAdres();
+    }
+
+    public String getPostalcode(){
+        return person.getPostcalCode();
     }
 
     public List<Product> getProducts() {

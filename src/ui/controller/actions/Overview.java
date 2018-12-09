@@ -9,6 +9,7 @@ public class Overview extends RequestHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         request.setAttribute("orders", getService().getAllOrders());
+        request.setAttribute("products", getService().getAllOrders().);
         return "orders.jsp";
     }
 }

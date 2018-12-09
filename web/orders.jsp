@@ -30,14 +30,15 @@
         <table>
             <tr>
                 <th>Name</th>
-                <th>Description</th>
-                <th>price</th>
+                <th>adress</th>
+                <th>postal code</th>
             </tr>
             <c:forEach var ="orders" items = "${orders}" >
                 <tr>
-                    <td><c:out value="${orders.name}"/></td>
-                    <td><c:out value="${products.description}"/></td>
-                    <td><c:out value="${products.price}"/></td>
+                    <td><c:out value="${orders.person}"/></td>
+                    <td><c:out value="${orders.adress}"/></td>
+                    <td><c:out value="${orders.postalcode}"/></td>
+
                 </tr>
             </c:forEach>
         </table>

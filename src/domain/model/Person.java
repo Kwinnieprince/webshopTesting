@@ -57,4 +57,5 @@ public class Person {
     public String getPostcalCode(){
         return this.postalCode;
     }
+
 }

@@ -49,12 +49,18 @@ public class OrderDBPostgres implements OrderDb {
         try(Connection connection = DriverManager.getConnection(url,properties);
             Statement statement = connection.createStatement()){
             ResultSet result = statement.executeQuery("SELECT * FROM testing.orders");
+            Order order = new Order();
+            int orderId = 0;
             while (result.next()){
-                Order order = new Order();
-                order.setOrderId(result.getInt("id"));
-                order.setPersonId(result.getInt("person_id"));
-                getPerson(result.getInt("person_id"));
-                order.setProductId(result.getInt("product_id"));
+                int id = result.getInt("id");
+                if(orderId == id){
+                    order.addProduct(getProduct(result.getInt("product_id")));
+                }else{
+                    order = new Order();
+                    order.addProduct(getProduct(result.getInt("product_id")));
+                }
+                order.setPerson(getPerson(result.getInt("person_id")));
+                orderId = id;
                 orders.add(order);
             }
         }catch (SQLException e){
@@ -63,7 +69,7 @@ public class OrderDBPostgres implements OrderDb {
         return orders;
     }
 
-    private void getPerson(int id){
+    private Person getPerson(int id){
         Person person = new Person();
         try(Connection connection = DriverManager.getConnection(url,properties);
             Statement statement = connection.createStatement()){
@@ -73,25 +79,29 @@ public class OrderDBPostgres implements OrderDb {
                 person.setName(result.getString("name"));
                 person.setAdres(result.getString("adres"));
                 person.setPostalCode(result.getString("postal_code"));
-
+                return person;
             }
         }catch (SQLException e){
             throw new DbException(e);
         }
+        return person;
     }
 
-    private void getProducts(int id){
-        List<Product>products = new ArrayList<>();
+    private Product getProduct(int id){
+        Product product = new Product();
         try(Connection connection = DriverManager.getConnection(url,properties);
             Statement statement = connection.createStatement()){
             ResultSet result = statement.executeQuery("SELECT * FROM testing.products where id="+id);
             while (result.next()){
-                Product product = new Product();
-
+                product.setPrice(result.getDouble("price"));
+                product.setDescription(result.getString("description"));
+                product.setName(result.getString("name"));
+                return product;
             }
         }catch (SQLException e){
             throw new DbException(e);
         }
+        return product;
     }
 
     @Override
