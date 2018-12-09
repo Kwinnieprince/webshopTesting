@@ -35,10 +35,10 @@
             </tr>
             <c:forEach var ="orders" items = "${orders}" >
                 <tr>
-                    <td><c:out value="${orders.person}"/></td>
-                    <td><c:out value="${orders.adress}"/></td>
-                    <td><c:out value="${orders.postalcode}"/></td>
-                    <td><c:out value="${orders.products}"/></td>
+                    <td><c:out value="${orders.key.person}"/></td>
+                    <td><c:out value="${orders.key.adress}"/></td>
+                    <td><c:out value="${orders.key.postalcode}"/></td>
+                    <td><c:out value="${orders.key.products}"/></td>
 
                 </tr>
             </c:forEach>
