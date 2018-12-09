@@ -45,15 +45,17 @@
                     <td>
                         <table>
                             <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <c:forEach var="product" items="${orders.key.products}" >
-                            <td><c:out value="${product.name}" /> </td>
-                            <td><c:out value="${product.description}" /> </td>
-                            <td><c:out value="${product.price}" /> </td>
-                        </c:forEach>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
                             </tr>
+                                <c:forEach var="product" items="${orders.key.products}" >
+                                    <tr>
+                                        <td><c:out value="${product.name}" /> </td>
+                                        <td><c:out value="${product.description}" /> </td>
+                                        <td><c:out value="${product.price}" /> </td>
+                                    </tr>
+                                </c:forEach>
                         </table>
                     </td>
                     <td><c:out value="${orders.key.total}"/> </td>
