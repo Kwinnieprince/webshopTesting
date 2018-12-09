@@ -10,13 +10,14 @@ public class ShopService {
     private Properties properties;
     ProductDb productDb;
     PersonDb personDb;
+    OrderDb orderDb;
 
     public ShopService(Properties properties){
         this.properties = properties;
         productDb = new ProductDBPostgres(properties);
         personDb = new PersonDbPostgres(properties);
+        orderDb = new OrderDBPostgres(properties);
     }
-
 
     public Product getProduct(int id){
         return productDb.get(id);
@@ -64,6 +65,10 @@ public class ShopService {
 
     public int getNumberOfPersons(){
         return personDb.getNumberOfPersons();
+    }
+
+    public List<Order>getAllOrders(){
+        return orderDb.getAll();
     }
 
 

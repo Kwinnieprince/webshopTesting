@@ -22,7 +22,7 @@
             </ul>
         </nav>
         <h2>
-            Order Overview
+            Orders Overview
         </h2>
     </header>
     <main>
@@ -33,9 +33,9 @@
                 <th>Description</th>
                 <th>price</th>
             </tr>
-            <c:forEach var ="products" items = "${productscart}" >
+            <c:forEach var ="orders" items = "${orders}" >
                 <tr>
-                    <td><c:out value="${products.name}"/></td>
+                    <td><c:out value="${orders.name}"/></td>
                     <td><c:out value="${products.description}"/></td>
                     <td><c:out value="${products.price}"/></td>
                 </tr>
