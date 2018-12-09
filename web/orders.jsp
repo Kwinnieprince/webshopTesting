@@ -40,8 +40,6 @@
                     <td><c:out value="${orders.key.person}"/></td>
                     <td><c:out value="${orders.key.adress}"/></td>
                     <td><c:out value="${orders.key.postalcode}"/></td>
-                    <td><c:out value="${orders.key.products}"/></td>
-                    <td>&euro; <c:out value="${orders.key.total}"/></td>
                     <td>
                         <table>
                             <tr>
