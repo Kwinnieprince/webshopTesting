@@ -44,7 +44,7 @@
                         <td><c:out value="${products.key.description}"/></td>
                         <td><c:out value="${products.key.price}"/></td>
                         <td><c:out value="${products.value}" /> </td>
-                        <td><c:out value="${products.key.price * products.value}"/></td>
+                        <td> &euro; <c:out value="${products.key.price * products.value}"/></td>
                     </tr>
                 </c:forEach>
                 <p><c:out value="Total price : ${ total }€"/></p>
