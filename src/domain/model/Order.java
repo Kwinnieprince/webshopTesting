@@ -1,6 +1,7 @@
 package domain.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Order {
@@ -45,6 +46,19 @@ public class Order {
 
     public List<Product> getProducts() {
         return products;
+    }
+
+    public HashMap<Product, Integer> getProductAmounts() {
+        HashMap<Product, Integer> ret = new HashMap<>();
+        for(Product p : products) {
+            if(!ret.containsKey(p) || ret.get(p) == 0) {
+                ret.put(p, 1);
+            }
+            else {
+                ret.put(p, ret.get(p) + 1);
+            }
+        }
+        return ret;
     }
 
     public void setOrderId(int id){
