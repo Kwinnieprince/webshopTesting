@@ -13,16 +13,8 @@ import java.util.List;
 public class Overview extends RequestHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        HashMap<Order, List<Product>> ret = new HashMap<>();
-        for(Order o : getService().getAllOrders()) {
-            if(ret.get(o) == null) {
-                ret.put(o, new ArrayList<>());
-            }
-            ret.get(o).addAll(o.getProducts());
-        }
-
-        request.setAttribute("orders", ret);
-        //request.setAttribute("products", getService().getAllOrders());
+        request.setAttribute("orders", getService().getAllOrders());
+        //request.setAttribute("products", getService().getAllOrders().);
         return "orders.jsp";
     }
 }
