@@ -33,7 +33,7 @@
                 <th>adress</th>
                 <th>postal code</th>
                 <th>products</th>
-                <th>total</th>
+                <th style="padding: 15px;">total</th>
             </tr>
             <c:forEach var ="orders" items = "${orders}" >
                 <tr>
@@ -41,7 +41,7 @@
                     <td><c:out value="${orders.key.adress}"/></td>
                     <td><c:out value="${orders.key.postalcode}"/></td>
                     <td><c:out value="${orders.key.products}"/></td>
-                    <td><c:out value="${orders.key.total}"/> </td>
+                    <td>&euro; <c:out value="${orders.key.total}"/></td>
                 </tr>
             </c:forEach>
         </table>
