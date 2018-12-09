@@ -71,4 +71,12 @@ public class Order {
         return this.personId;
     }
 
+    public int getTotal() {
+        int total = 0;
+        for(Product p : products) {
+            total += p.getPrice();
+        }
+        return total;
+    }
+
 }
