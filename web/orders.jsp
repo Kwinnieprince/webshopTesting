@@ -38,6 +38,7 @@
                     <td><c:out value="${orders.person}"/></td>
                     <td><c:out value="${orders.adress}"/></td>
                     <td><c:out value="${orders.postalcode}"/></td>
+                    <td><c:out value="${orders.products}"/></td>
 
                 </tr>
             </c:forEach>
@@ -51,19 +52,7 @@
 
         </p>
         <br>
-        <h2>This is your adress:</h2>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>adress</th>
-                <th>postal code</th>
-            </tr>
-            <tr>
-                <td><c:out value="${name}"/></td>
-                <td><c:out value="${adress}"/></td>
-                <td><c:out value="${postalcode}"/></td>
-            </tr>
-        </table>
+
     </main>
     <footer>
         &copy; group22
