@@ -45,6 +45,7 @@ public class Checkout extends RequestHandler {
                 price += product.getPrice();
             }
             Person person = new Person(getService().generatePersonId(),name, adress, postalcode);
+            getService().addPerson(person);
             Order order = new Order(person, products);
             order.setPersonId(person.getId());
             order.setOrderId(getService().generateOrderId());

@@ -107,6 +107,7 @@ public class OrderDBPostgres implements OrderDb {
 
     @Override
     public void add(Order order){
+        int sizeOrders = order.getProductId().size();
         if(order == null){
             throw new DbException("Nothing to add");
         }
@@ -117,10 +118,12 @@ public class OrderDBPostgres implements OrderDb {
             PreparedStatement statement = connection.prepareStatement(sql)){
 //            statement.setInt(1, product.getProductId());
             //System.out.println(order.getOrderId() +"\n"+ order.getPersonId() +"\n"+ order.getProductId());
-            statement.setInt(1, order.getOrderId());
-            statement.setInt(2, order.getPersonId());
-            statement.setInt(3, order.getProductId());
-            statement.execute();
+            for(int i = 0; i <= sizeOrders; i++){
+                statement.setInt(1, order.getOrderId());
+                statement.setInt(2, order.getPersonId());
+                statement.setInt(3, order.getProductId().get(i));
+                statement.execute();
+            }
         }catch (SQLException e){
             throw new DbException(e);
         }
@@ -156,8 +159,8 @@ public class OrderDBPostgres implements OrderDb {
         try(Connection connection = DriverManager.getConnection(url, properties);
             //Statement statement = connection.createStatement()) {
             PreparedStatement statement = connection.prepareStatement(sql)){
-            statement.setInt(1, order.getProductId());
-            statement.setInt(2, order.getProductId());
+            //statement.setInt(1, order.getProductId());
+            //statement.setInt(2, order.getProductId());
             statement.execute();
         }catch (SQLException e){
             throw new DbException(e);

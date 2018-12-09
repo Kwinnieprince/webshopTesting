@@ -7,7 +7,7 @@ public class Order {
     private Person person;
     private List<Product>products;
     private int id;
-    private int productId;
+    private List<Integer> productId;
     private int personId;
 
     public Order(Person person, List<Product> products){
@@ -51,7 +51,7 @@ public class Order {
         this.id = id;
     }
 
-    public void setProductId(int id){
+    public void setProductId(List<Integer> id){
         this.productId = id;
     }
 
@@ -59,8 +59,12 @@ public class Order {
         this.personId = id;
     }
 
-    public int getProductId(){
-        return productId;
+    public List<Integer> getProductId(){
+        List<Integer>productIds = new ArrayList<>();
+        for (Product product : products) {
+            productIds.add(product.getProductId());
+        }
+        return productIds;
     }
 
     public int getOrderId(){

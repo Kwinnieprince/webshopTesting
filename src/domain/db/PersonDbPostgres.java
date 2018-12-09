@@ -64,7 +64,7 @@ public class PersonDbPostgres implements PersonDb {
         if(person == null){
             throw new DbException("Nothing to add");
         }
-        String sql = "INSERT INTO testing.persons (id, name, description, price) VALUES(?,?,?,?);";
+        String sql = "INSERT INTO testing.persons (id, name, adres, postal_code) VALUES(?,?,?,?);";
         //String sql = "INSERT INTO r0712411web.persons VALUES(" + person.getPersonId() + ",'" + person.getName() + "','" + person.getDescription() +"'," + person.getPrice() +")";
         try(Connection connection = DriverManager.getConnection(url, properties);
             //Statement statement = connection.createStatement()){
