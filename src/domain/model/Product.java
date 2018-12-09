@@ -66,9 +66,14 @@ public class Product {
 	
 	@Override
 	public String toString(){
-		if(getName() != null) {
+		if(getName() != null && getDescription() != null) {
 			return getName() + ": " + getDescription() + " : €" + getPrice();
 		}
+		
+		if(getName() != null) {
+			return getName() + " : €" + getPrice();
+		}
+
 		return "";
 	}
 

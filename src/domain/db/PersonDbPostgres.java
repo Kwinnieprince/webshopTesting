@@ -71,7 +71,7 @@ public class PersonDbPostgres implements PersonDb {
             statement.setInt(1, person.getId());
             statement.setString(2, person.getName());
             statement.setString(3, person.getAdres());
-            statement.setString(4, person.getPostcalCode());
+            statement.setString(4, person.getPostalCode());
             statement.execute();
         }catch (SQLException e){
             throw new DbException(e);
@@ -91,7 +91,7 @@ public class PersonDbPostgres implements PersonDb {
             PreparedStatement statement = connection.prepareStatement(sql)){
             statement.setString(1, person.getName());
             statement.setString(2, person.getAdres());
-            statement.setString(3, person.getPostcalCode());
+            statement.setString(3, person.getPostalCode());
             statement.setInt(4, person.getId());
             statement.execute();
         }catch (SQLException e){

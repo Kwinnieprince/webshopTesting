@@ -1,9 +1,5 @@
 package domain.model;
 
-import org.w3c.dom.DOMException;
-
-import java.util.ArrayList;
-
 public class Person {
     private String name, adres, postalCode;
     private int id;
@@ -34,7 +30,7 @@ public class Person {
 
     public void setPostalCode(String postalCode){
         if(isEmpty(postalCode)) throw new DomainException("Postal code can't be empty");
-        this.adres = adres;
+        this.postalCode = postalCode;
     }
 
     private boolean isEmpty(String str){
@@ -54,7 +50,7 @@ public class Person {
         return this.adres;
     }
 
-    public String getPostcalCode(){
+    public String getPostalCode(){
         return this.postalCode;
     }
 
