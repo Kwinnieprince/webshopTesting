@@ -69,7 +69,7 @@ public class Product {
 		if(getName() != null && getDescription() != null) {
 			return getName() + ": " + getDescription() + " : €" + getPrice();
 		}
-		
+
 		if(getName() != null) {
 			return getName() + " : €" + getPrice();
 		}
@@ -83,7 +83,7 @@ public class Product {
 		if(o == this) return true;
 		if(o instanceof Product) {
 			Product p = (Product) o;
-			if(p.productId == this.productId) return true;
+			if(p.getProductId() == this.getProductId()) return true;
 		}
 		return false;
 	}
