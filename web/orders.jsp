@@ -26,7 +26,6 @@
         </h2>
     </header>
     <main>
-        <h2>Orders:</h2>
         <table>
             <tr>
                 <th>Name</th>
