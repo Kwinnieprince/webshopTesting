@@ -46,15 +46,6 @@
             </c:forEach>
         </table>
         <br>
-        <p>
-            The total cost of this order is: €
-            <c:if test="${totalprice != 0}">
-                <c:out value="${totalprice}"/>
-            </c:if>
-
-        </p>
-        <br>
-
     </main>
     <footer>
         &copy; group22
